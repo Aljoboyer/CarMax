@@ -11,9 +11,16 @@ import {
   } from "react-router-dom";
 const Dashboardmanu = () => {
     const { path, url } = useRouteMatch();
-    const {isadmin,user,LogoutUser} = useAuth();
-    
+    const {isadmin,user,LogoutUser,setIsadmin} = useAuth();
+    if(user.email)
+    {
+        console.log('from if in dash manu',isadmin)
+    }
+    else{
+        console.log('from else in dash manu',isadmin) 
+    }
     const LogoutHandler = () => {
+        setIsadmin(false)
         LogoutUser()
     }
 

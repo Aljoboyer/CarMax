@@ -18,6 +18,7 @@ const useFirebase = () => {
         
         .then((userCredential) => {
             const user = userCredential.user;
+            setUser(user)
             SaveUser(email,name)
             history.push('/')
             //saving name into firebase
@@ -63,13 +64,13 @@ const useFirebase = () => {
             }
             setIsloading(false)
           });
-    },[])
+    },[auth])
     //searching admin
     useEffect(() => {
         const email = localStorage.getItem('currentemail')
-        if(email)
+        if(user.email)
         {
-          fetch(`https://evening-caverns-02179.herokuapp.com/users?email=${email}`)
+          fetch(`https://evening-caverns-02179.herokuapp.com/users?email=${user.email}`)
           .then(res => res.json())
           .then(data => setIsadmin(data.admin))
         }
@@ -93,8 +94,9 @@ const useFirebase = () => {
     const LogoutUser = () => {
         signOut(auth).then(() => {
             setUser({})
+            setIsadmin(false)
           }).catch((error) => {
-            // An error happened.
+            
           });
     }
     return {
@@ -105,7 +107,8 @@ const useFirebase = () => {
         LogoutUser,
         isloading,
         isadmin,
-        logerror
+        logerror,
+        setIsadmin
     }
 }
 

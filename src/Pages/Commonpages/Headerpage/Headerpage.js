@@ -3,9 +3,10 @@ import {Container, Nav, Navbar} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Context/useAuth';
 const Headerpage = () => {
-  const {user,LogoutUser} = useAuth();
+  const {user,LogoutUser,setIsadmin} = useAuth();
 
   const LogoutHandler = () => {
+    setIsadmin(false)
     LogoutUser()
   }
     return (

@@ -18,6 +18,7 @@ import Addnewcar from '../../Adminpages/Addnewcar/Addnewcar';
 import Manageallcar from '../../Adminpages/Manageallcar/Manageallcar';
 import Managecarorder from '../../Adminpages/Managecarorder/Managecarorder';
 import Makeadmin from '../../Adminpages/Makeadmin/Makeadmin';
+import Adminroute from '../../Adminpages/Adminroute/Adminroute'
 const Dashboard = () => {
     const { path, url } = useRouteMatch();
     return (
@@ -43,18 +44,18 @@ const Dashboard = () => {
                     </Route>
 
 
-                    <Route path={`${path}/addcar`}>
+                    <Adminroute path={`${path}/addcar`}>
                         <Addnewcar></Addnewcar>
-                    </Route>
-                    <Route path={`${path}/managecar`}>
+                    </Adminroute>
+                    <Adminroute path={`${path}/managecar`}>
                         <Manageallcar></Manageallcar>
-                    </Route>
-                    <Route path={`${path}/manageorder`}>
+                    </Adminroute>
+                    <Adminroute path={`${path}/manageorder`}>
                         <Managecarorder></Managecarorder>
-                    </Route>
-                    <Route path={`${path}/makeadmin`}>
+                    </Adminroute>
+                    <Adminroute path={`${path}/makeadmin`}>
                         <Makeadmin></Makeadmin>
-                    </Route>
+                    </Adminroute>
                 </Switch>
                 </Col>
             </Row>
