@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
+import Successmodal from '../../Commonpages/Successmodal/Successmodal';
 import './makeadmin.css';
 const Makeadmin = () => {
-    const [email, setEmail] = useState('')
+    const [email, setEmail] = useState('');
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+
     const onblurHandler = e => {
         setEmail(e.target.value)
     }
@@ -18,7 +23,7 @@ const Makeadmin = () => {
         .then(data => {
             if(data.modifiedCount)
             {
-                alert('Success')
+                setShow(true)
             }
         })
 
@@ -43,6 +48,8 @@ const Makeadmin = () => {
                 </Form.Floating>
                 <button type="submit" className="p-3 btn btn-info fw-bold fs-5">Add</button>
             </form>
+
+            <Successmodal setShow={setShow} show={show} handleClose={handleClose}>Admin Added Successfully</Successmodal>
         </div>
     );
 };

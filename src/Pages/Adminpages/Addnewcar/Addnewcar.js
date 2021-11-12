@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 import useAuth from '../../../Context/useAuth';
+import Successmodal from '../../Commonpages/Successmodal/Successmodal';
 
 const Addnewcar = () => {
-    const {user} = useAuth()
+    const {user} = useAuth();
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
     
     const [formdata, setFormdata] = useState({});
     const onblurHandler = e => {
@@ -26,7 +30,7 @@ const Addnewcar = () => {
         .then(data => {
             if(data.deletedCount > 0)
             {
-                alert('succesfully deleted')
+                setShow(true)
                 e.target.reset()
             }
         })
@@ -90,6 +94,8 @@ const Addnewcar = () => {
         <button type="submit" className="btn btn-info fw-bold rounded my-3 w-50" >Add Car</button>
             </form>
     </Row>
+
+    <Successmodal setShow={setShow} show={show} handleClose={handleClose}>Car Added Successfully</Successmodal>
         </div>
     );
 };

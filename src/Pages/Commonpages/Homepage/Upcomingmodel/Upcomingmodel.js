@@ -13,7 +13,7 @@ const Upcomingmodel = () => {
                <h2 className="fw-bold">Our Upcoming New Model</h2>
                <h5 className="fw-bold">Book Advance</h5>
                <h4 className="fw-bold">Get <h1>20% Discount</h1></h4>
-               <button className="btn rounded advancebtn fw-bold fs-6">Advance Book Now</button>
+               <button className="btn rounded advancebtn fw-bold fs-5">Advance Book Now <i className="fas fa-arrow-right"></i></button>
                </Col>
            </Col>
        </Row>

@@ -14,7 +14,7 @@ const Caritem = ({car}) => {
                     <h3>{carname}</h3>
                     <h6 className="text-primary fw-bold">$ {price}</h6>
                     <p>{descrip}</p>
-                 <Link to={`/buypage/${_id}`} ><button className="btn btn-warning fw-bold text-primary w-75 mb-4">Buy Now</button></Link>
+                 <Link to={`/buypage/${_id}`} ><button className="btn btn-warning fw-bold text-primary w-75 mb-4">Buy Now <i className="far fa-money-bill-alt"></i></button></Link>
                </Col>
             </Row>
        </Col>

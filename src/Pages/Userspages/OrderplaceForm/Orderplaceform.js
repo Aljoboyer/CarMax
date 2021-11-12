@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 import useAuth from '../../../Context/useAuth';
+import Successmodal from '../../Commonpages/Successmodal/Successmodal';
 
 const Orderplaceform = ({buycar}) => {
     const {user} = useAuth()
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+
     
     const [formdata, setFormdata] = useState({email:user.email,username:user.displayName,modelname:buycar.carname});
     const onblurHandler = e => {
@@ -30,7 +35,7 @@ const Orderplaceform = ({buycar}) => {
         .then(data => {
             if(data.insertedId)
             {   
-                alert('Ordered SuccesFully')
+                setShow(true)
                 e.target.reset()
             }
         })
@@ -113,6 +118,8 @@ const Orderplaceform = ({buycar}) => {
         </Form.Group>
         <button type="submit" className="btn btn-info fw-bold rounded my-3 w-50" >Purchase</button>
             </form>
+
+            <Successmodal setShow={setShow} show={show} handleClose={handleClose}>Ordered Successfully</Successmodal>
     </Row>
     );
 };

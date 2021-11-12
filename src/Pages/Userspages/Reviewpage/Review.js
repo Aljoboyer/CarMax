@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import {Col, Form, Row} from 'react-bootstrap';
 import Rating from 'react-rating';
 import useAuth from '../../../Context/useAuth';
+import Successmodal from '../../Commonpages/Successmodal/Successmodal';
 import './Review.css';
 
 const Review = () => {
     const {user} = useAuth()
     const [reviews, setReviews] = useState('')
-    const [rates, setRates] = useState(0)
+    const [rates, setRates] = useState(0);
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
 
     const ReviewHandler = e => {
         setReviews(e.target.value)
@@ -24,6 +28,7 @@ const Review = () => {
         })
         .then(res => res.json())
         .then(data => {
+            setShow(true)
             e.target.reset()
         })
         e.preventDefault()
@@ -47,6 +52,8 @@ const Review = () => {
             </Form.Group>
             <button type="submit" className="btn btn-primary">Send</button>
             </Form>
+
+            <Successmodal setShow={setShow} show={show} handleClose={handleClose}>Review Sended</Successmodal>
         </div>
     );
 };

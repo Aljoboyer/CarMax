@@ -12,7 +12,7 @@ const Myorders = () => {
     const handleClose = () => setPermission(false);
     const [isdelete, setIsdelete] = useState(false);
     const [deleteid, setDeleteid] = useState(null)
-    const [show, setShow] = useState(false)
+    const [demo, setDemo] = useState([])
     useEffect(() => {
         fetch(`https://evening-caverns-02179.herokuapp.com/myorder?email=${user.email}`,{
             headers:{
@@ -21,7 +21,7 @@ const Myorders = () => {
         })
         .then(res => res.json())
         .then(data => setOrders(data))
-    },[])
+    },[user.email,orders])
     
     const DeleteHanlder = (id,ispermission) => {
         setPermission(ispermission)
@@ -41,6 +41,7 @@ const Myorders = () => {
                 {
                    
                     setIsdelete(false)
+                    setDemo(orders)
                 }
                 
             })

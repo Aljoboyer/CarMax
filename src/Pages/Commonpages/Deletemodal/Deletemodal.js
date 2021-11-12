@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal ,Button} from 'react-bootstrap';
 
-const Deletemodal = ({DeleteHanlder,deleteid,setPermission,permission,setIsdelete,handleClose}) => {
+const Deletemodal = ({children,DeleteHanlder,deleteid,setPermission,permission,setIsdelete,handleClose}) => {
             return (
     <>   
     <Modal
@@ -11,11 +11,10 @@ const Deletemodal = ({DeleteHanlder,deleteid,setPermission,permission,setIsdelet
         keyboard={false}
     >
         <Modal.Header closeButton>
-        <Modal.Title>Modal title</Modal.Title>
+        <Modal.Title><i className="fas fa-trash-alt fa-2x"></i></Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-        I will not close if you click outside me. Don't even try to press
-        escape key.
+        <Modal.Body className="text-danger fw-bold fs-5">
+                Are Your Sure ! Want to delete This item ?
         </Modal.Body>
         <Modal.Footer>
         <Button variant="secondary" onClick={() => {
