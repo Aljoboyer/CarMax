@@ -7,7 +7,7 @@ import Headerpage from '../../Headerpage/Headerpage';
 import {useLocation,useHistory} from 'react-router-dom'
 const Login = () => {
     const [formdata, setFormdata] = useState({});
-    const {LoginUser, user} = useAuth()
+    const {LoginUser, user,logerror} = useAuth()
     const location = useLocation()
     const history = useHistory()
     const onblurHandler = e => {
@@ -28,6 +28,7 @@ const Login = () => {
             <Headerpage></Headerpage>
             <Row className="algin-items-center justify-content-center login">
                 <Col lg={7} sm={12} md={8} className="loginform my-4 p-4">
+                    <h5 className="text-danger fw-bold">{logerror}</h5>
                 <h3 className="my-4 fw-bold">Log in CarMax</h3>
                     <form onSubmit={SubmitHanlder}>
                     <Form.Floating className="mb-3 fw-bold text-primary">

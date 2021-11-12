@@ -7,8 +7,8 @@ import Headerpage from '../../Headerpage/Headerpage';
 import {useLocation,useHistory} from 'react-router-dom'
 const Register = () => {
     const [formdata, setFormdata] = useState({});
-    const {RegisterUser, user} = useAuth();
-
+    const {RegisterUser, user,error} = useAuth();
+    const [regerror, setRegerror] = useState('')
     
     const history = useHistory()
 
@@ -27,7 +27,7 @@ const Register = () => {
             e.target.reset()
         }
         else{
-            alert('Password Not matched')
+            setRegerror('Password Not Marched')
         }
         e.preventDefault()
         
@@ -40,6 +40,7 @@ const Register = () => {
                 <h3 className="my-4 fw-bold">Create Account To <h2 className="text-info fw-bold">CarMax</h2></h3>
               {user.email ?  <h2>Register Successfully</h2> : '' }
                     <form onSubmit={SubmitHanlder}>
+                        <h5 className="text-danger fw-bold">{error}</h5>
                     <Form.Floating className="mb-3 fw-bold text-primary">
                     <Form.Control
                     className="w-75"
@@ -85,6 +86,7 @@ const Register = () => {
                     />
                     <label htmlFor="floatingPasswordCustom">Re Enter Password Your Password</label>
                 </Form.Floating>
+                <p className="text-danger fw-bold">{regerror}</p>
                 <button type="submit" className="btn btn-info fw-bold rounded my-3" >Register</button>
                     </form>
                     <Link className="fw-bold text-info fs-6" to="/login">Are You Already Rgister? please Login</Link>

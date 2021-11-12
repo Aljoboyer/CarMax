@@ -6,6 +6,7 @@ intializationFirebase()
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
+    const [logerror, setLogerror] = useState('')
     const [isloading, setIsloading] = useState(true);
     const [isadmin, setIsadmin] = useState(false)
     const auth = getAuth();
@@ -25,6 +26,7 @@ const useFirebase = () => {
             }).then(() => {
 
             }).catch((error) => {
+              setLogerror('Email is Already Register please Log in')
             }).finally(() => setIsloading(false));
 
         })
@@ -102,7 +104,8 @@ const useFirebase = () => {
         error,
         LogoutUser,
         isloading,
-        isadmin
+        isadmin,
+        logerror
     }
 }
 

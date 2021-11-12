@@ -16,7 +16,6 @@ const Manageallcar = () => {
         setPermission(ispermission)
         setDeleteid(id)
         setIsdelete(true);
-        console.log(id)
         if(isdelete)
         {
 
