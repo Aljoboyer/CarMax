@@ -26,7 +26,7 @@ const useFirebase = () => {
             }).then(() => {
 
             }).catch((error) => {
-              setLogerror('Email is Already Register please Log in')
+              setError('Email is Already Register please Log in')
             }).finally(() => setIsloading(false));
 
         })
@@ -45,7 +45,7 @@ const useFirebase = () => {
           history.push(location.state?.from || '/')
         })
         .catch((error) => {
-            setError('Your Email/Password is Wrong Please Try Again')
+          setLogerror('Your Email/Password is Wrong Please Try Again')
         }).finally(() => setIsloading(false));
     }
 

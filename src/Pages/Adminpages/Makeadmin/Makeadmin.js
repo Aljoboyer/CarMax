@@ -15,19 +15,19 @@ const Makeadmin = () => {
         fetch(`https://evening-caverns-02179.herokuapp.com/makeadmin?email=${email}`,{
             method: 'PUT',
             headers:{
-                'authorization':`Bearer ${localStorage.getItem('idtoken')}`,
                 'content-type':'application/json'
             }
         })
         .then(res => res.json())
         .then(data => {
-            if(data.modifiedCount)
+            if(data)
             {
                 setShow(true)
+                e.target.reset()
             }
         })
 
-        e.target.reset()
+        
         e.preventDefault()
     } 
     return (

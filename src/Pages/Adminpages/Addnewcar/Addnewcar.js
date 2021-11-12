@@ -28,7 +28,7 @@ const Addnewcar = () => {
         })
         .then(res => res.json())
         .then(data => {
-            if(data.deletedCount > 0)
+            if(data)
             {
                 setShow(true)
                 e.target.reset()
