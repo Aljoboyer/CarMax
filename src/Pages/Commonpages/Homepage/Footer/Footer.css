@@ -1,0 +1,8 @@
+.footer{
+    background: linear-gradient(225deg, rgb(5, 89, 173) 0%, rgb(23, 115, 207) 100%);
+    color: white;
+}
+.footerbottom a {
+    text-decoration: none;
+    color: white;
+}

@@ -1,23 +1,55 @@
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Homepage from './Pages/Commonpages/Homepage/Homepage';
+import Dashboard from './Pages/Commonpages/Dashboard/Dashboard';
+import Moremodels from './Pages/Userspages/Moremodels/Moremodels';
+import Authprovider from './Context/Authprovider';
+import Login from './Pages/Commonpages/Authpages/Login/Login';
+import Register from './Pages/Commonpages/Authpages/Register/Register';
+import Buypage from './Pages/Userspages/BuyPage/Buypage';
+import Privateroute from './Privateroute/Privateroute';
+import Footer from './Pages/Commonpages/Homepage/Footer/Footer';
+import Notfound from './Pages/Commonpages/Notfound/Notfound';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="Container-fluid">
+      <Authprovider>
+          <Router>
+              <Switch>
+                  <Route exact path="/">
+                      <Homepage></Homepage>
+                  </Route>
+                  <Privateroute path="/dashboard">
+                    <Dashboard></Dashboard>
+                  </Privateroute>
+                  <Route exact path="/moremodels">
+                      <Moremodels></Moremodels>
+                  </Route>
+                  <Route exact path="/login">
+                    <Login></Login>
+                  </Route>
+                  <Route exact path="/register">
+                    <Register></Register>
+                  </Route>
+                  <Privateroute exact path="/buypage/:id">
+                    <Buypage></Buypage>
+                  </Privateroute>
+                  <Route exact path="*">
+                    <Notfound></Notfound>
+                  </Route>
+              </Switch>
+              <Footer></Footer>
+          </Router>
+      </Authprovider>
     </div>
   );
 }

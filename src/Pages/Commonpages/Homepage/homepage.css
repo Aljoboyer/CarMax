@@ -1,0 +1,34 @@
+.homepagerow{
+    background-image: url('../../../images/homebanner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.homecol h1{
+    font-weight: bold;
+    font-size: 48px;
+    color: #053361;
+}
+.homecol h5{
+    font-weight: 700;
+    color: #053361;
+}
+.fa-gratipay{
+    color: goldenrod;
+}
+.navtext{
+    color: #053361;
+}
+.carocap{
+    background-color: #0000007b;
+    color: gold;
+}
+.upcomdis{
+    background-color: #053361e9;
+    color: rgb(255, 255, 255);
+}
+.advancebtn{
+    color: gold;
+    border: 1px solid white;
+    padding: 15px;
+}
