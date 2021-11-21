@@ -1,13 +1,13 @@
 import React from 'react';
 import {Col, Row} from 'react-bootstrap' 
 const Car = ({newcar,DeleteHanlder}) => {
-    const {_id,img,descrip,price,carname} = newcar;
+    const {_id,imgBuffer,descrip,price,carname} = newcar;
     const newdescrip = descrip.slice(0, 100)
     return (
          <Col lg={6} md={6} sm={12}>
          <Row className="gx-3">
              <Col lg={6} md={6} sm={12}>
-                  <img className="w-100 h-75 rounded" src={img} alt="" />
+                  <img className="w-100 h-75 rounded" src={`data:image/png;base64,${imgBuffer}`} alt="" />
              </Col>
              <Col lg={6} md={6} sm={12}>
                   <h3>{carname}</h3>

@@ -1,6 +1,5 @@
 import React from 'react';
-import {Col, Row} from 'react-bootstrap'
-import Headerpage from '../Headerpage/Headerpage';
+import {Col, Row} from 'react-bootstrap';
 import Dashboardmanu from './Dashboardmanu';
 import {
     BrowserRouter as Router,
@@ -12,19 +11,21 @@ import {
   } from "react-router-dom";
 import Dashboardmain from './Dashboardmain'
 import Myorders from '../../Userspages/Myorders/Myorders';
-import Payment from '../../Userspages/Pymentpage/Payment';
 import Review from '../../Userspages/Reviewpage/Review';
 import Addnewcar from '../../Adminpages/Addnewcar/Addnewcar';
 import Manageallcar from '../../Adminpages/Manageallcar/Manageallcar';
 import Managecarorder from '../../Adminpages/Managecarorder/Managecarorder';
 import Makeadmin from '../../Adminpages/Makeadmin/Makeadmin';
 import Adminroute from '../../Adminpages/Adminroute/Adminroute'
+import Dashboardnavbar from './Dashboardnavbar';
+import Paymentstatus from '../../Userspages/Pymentpage/Paymentstatus';
+import Payment from '../../Userspages/Pymentpage/Payment';
 const Dashboard = () => {
     const { path, url } = useRouteMatch();
     return (
         <div className="container-fluid">
             <Row>
-                <Headerpage></Headerpage>
+                <Dashboardnavbar></Dashboardnavbar>
                 <Col lg={2} md={4} sm={12} className="bg-primary">
                     <Dashboardmanu></Dashboardmanu>
                 </Col>
@@ -36,9 +37,10 @@ const Dashboard = () => {
                     <Route path={`${path}/myorder`}>
                         <Myorders></Myorders>
                     </Route>
-                    <Route path={`${path}/payment`}>
-                        <Payment></Payment>
+                    <Route path={`${path}/paymentstatus`}>
+                        <Paymentstatus></Paymentstatus>
                     </Route>
+                    
                     <Route path={`${path}/review`}>
                         <Review></Review>
                     </Route>

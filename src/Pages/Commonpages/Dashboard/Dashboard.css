@@ -1,0 +1,14 @@
+@media only screen and (max-width:688px) {
+    .dashboardlist{
+        display: none;
+    }
+    .offcanvaslist{
+        font-size: 10px;
+        font-weight: 500;
+        margin-top: 5px;
+    }
+}
+.featurerow{
+    height: 450px;
+    overflow:scroll;
+}

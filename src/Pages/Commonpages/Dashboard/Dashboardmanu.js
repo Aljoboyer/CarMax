@@ -12,13 +12,9 @@ import {
 const Dashboardmanu = () => {
     const { path, url } = useRouteMatch();
     const {isadmin,user,LogoutUser,setIsadmin} = useAuth();
-    if(user.email)
-    {
-        console.log('from if in dash manu',isadmin)
-    }
-    else{
-        console.log('from else in dash manu',isadmin) 
-    }
+    
+        console.log('from if in dash manu',user.email)
+   
     const LogoutHandler = () => {
         setIsadmin(false)
         LogoutUser()
@@ -26,6 +22,7 @@ const Dashboardmanu = () => {
 
     return (
     <ListGroup className="mt-3 dashboardlist">
+         <Link to="/"><ListGroup.Item  variant="primary" className="offcanvaslist fw-bold my-2"><i className="fas fa-home"></i>Home</ListGroup.Item></Link>
         {
             user.email ? <ListGroup.Item  variant="primary" onClick={LogoutHandler} className="logout fw-bold my-2"><i className="fas fa-sign-out-alt"></i> Logout</ListGroup.Item> : ''
         }
@@ -43,7 +40,7 @@ const Dashboardmanu = () => {
 
             <> <Link to={`${url}/myorder`}><ListGroup.Item  variant="primary" className=" fw-bold my-2"><i className="fab fa-first-order me-2"></i> My Order</ListGroup.Item></Link>
 
-            <Link to={`${url}/payment`}><ListGroup.Item  variant="primary" className=" fw-bold"><i className="far fa-money-bill-alt me-2"></i> Payment</ListGroup.Item></Link>
+            <Link to={`${url}/paymentstatus`}><ListGroup.Item  variant="primary" className=" fw-bold"><i className="far fa-money-bill-alt me-2"></i> Payment Status</ListGroup.Item></Link>
     
             <Link to={`${url}/review`}><ListGroup.Item  variant="primary" className=" fw-bold my-2"><i className="fas fa-registered me-2"></i> Add a Review</ListGroup.Item></Link></>
         }

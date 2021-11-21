@@ -1,0 +1,32 @@
+import React from 'react';
+import { Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+const Brand = ({car}) => {
+    const {_id,imgBuffer,descrip,price,carname} = car
+    return (
+        <Col data-aos="zoom-in"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="true" lg={6} md={6} sm={12}>
+        <Row className="gx-3 ">
+            <Col lg={6} md={6} sm={12}>
+                 <img className="w-100 h-75 rounded" src={`data:image/jpeg;base64,${imgBuffer}`} alt="" />
+            </Col>
+            <Col className="carrow" lg={6} md={6} sm={12}>
+                 <h3>{carname}</h3>
+                 <h6 className="text-primary fw-bold">$ {price}</h6>
+                 <p>{descrip}</p>
+              <Link to={`/buypage/${_id}`} ><button className="btn btn-warning fw-bold text-primary w-75 mb-4">Buy Now <i className="far fa-money-bill-alt"></i></button></Link>
+            </Col>
+         </Row>
+    </Col>
+    );
+};
+
+export default Brand;

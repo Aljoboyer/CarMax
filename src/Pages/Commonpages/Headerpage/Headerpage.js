@@ -17,7 +17,7 @@ const Headerpage = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/" className="navtext fw-bold fs-6 ms-4"><i className="fas fa-home"></i> Home</Nav.Link>
-            <Nav.Link as={Link} to="/moremodels" className="navtext fw-bold fs-6 ms-4"><i className="fas fa-angle-double-right"></i> More Car Models</Nav.Link>
+            <Nav.Link as={Link} to="/carshop" className="navtext fw-bold fs-6 ms-4"><i className="fas fa-angle-double-right"></i>CarShop</Nav.Link>
             <Nav.Link as={Link} to="/dashboard" className="navtext fw-bold fs-6 ms-4"><i className="fas fa-chart-line"></i> Dashboard</Nav.Link>
           </Nav>
           <Nav>

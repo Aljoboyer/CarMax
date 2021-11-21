@@ -9,7 +9,7 @@ const Upcomingmodel = () => {
                <Modelslider></Modelslider>
            </Col>
            <Col lg={5} md={6} sm={12} className="upcomdis rounded d-flex align-items-center text-center">
-               <Col>
+               <Col className="p-4">
                <h2 className="fw-bold">Our Upcoming New Model</h2>
                <h5 className="fw-bold">Book Advance</h5>
                <h4 className="fw-bold">Get <h1>20% Discount</h1></h4>

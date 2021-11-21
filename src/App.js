@@ -17,6 +17,8 @@ import Buypage from './Pages/Userspages/BuyPage/Buypage';
 import Privateroute from './Privateroute/Privateroute';
 import Footer from './Pages/Commonpages/Homepage/Footer/Footer';
 import Notfound from './Pages/Commonpages/Notfound/Notfound';
+import Payment from './Pages/Userspages/Pymentpage/Payment';
+import Carshop from './Pages/Userspages/Carshop/Carshop';
 
 
 function App() {
@@ -31,9 +33,6 @@ function App() {
                   <Privateroute path="/dashboard">
                     <Dashboard></Dashboard>
                   </Privateroute>
-                  <Route exact path="/moremodels">
-                      <Moremodels></Moremodels>
-                  </Route>
                   <Route exact path="/login">
                     <Login></Login>
                   </Route>
@@ -43,6 +42,12 @@ function App() {
                   <Privateroute exact path="/buypage/:id">
                     <Buypage></Buypage>
                   </Privateroute>
+                  <Route exact path="/payment/:id">
+                        <Payment></Payment>
+                  </Route>
+                  <Route exact path="/carshop">
+                    <Carshop></Carshop>
+                    </Route>
                   <Route exact path="*">
                     <Notfound></Notfound>
                   </Route>

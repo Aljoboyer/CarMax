@@ -1,10 +1,13 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Caritems from '../../Userspages/Caritems/Caritems';
+import Gureenty from '../Gureentypage/Gureenty';
 import Headerpage from '../Headerpage/Headerpage';
+import Buycarbylifestyle from './BuycarBylifestyle/Buycarbylifestyle';
 import Displayreviews from './Displayreview/Displayreviews';
 import './homepage.css'
 import Upcomingmodel from './Upcomingmodel/Upcomingmodel';
+import Carmaxbenifits from './Carmaxbenifits/Carmaxbenifits'
 const Homepage = () => {
     return (
         <div className="container-fluid ">
@@ -18,10 +21,13 @@ const Homepage = () => {
                 </Col>
             </Row>
             </Row>
-            <h1 className="navtext fw-bold text-center my-4 fs-1 bg-warning p-3 rounded">Our Main Collection</h1>
+            <Gureenty></Gureenty>
+            <h1 className="navtext fw-bold text-center my-4 fs-1  p-3 rounded">Our  Collection</h1>
             <Caritems></Caritems>
+            <Buycarbylifestyle></Buycarbylifestyle>
             <Upcomingmodel></Upcomingmodel>
             <Displayreviews></Displayreviews>
+            <Carmaxbenifits></Carmaxbenifits>
         </div>
     );
 };

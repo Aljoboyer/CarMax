@@ -1,0 +1,25 @@
+.shoprow{
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3) ), url('../../../images/shopbg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.shoprow h1 {
+    font-weight: bold;
+    font-size: 3rem;
+    color: white;
+}
+.slidecontainer{
+    border-right: #053361e9 solid 15px;
+    border-left: #053361e9 solid 15px;
+    border-radius: 20px;
+}
+.collectiontitle{
+    color: #053361e9;
+}
+.slideone{
+    border-bottom: solid #053361e9 2px;
+}
+.imgcls{
+    cursor: pointer;
+}

@@ -3,12 +3,12 @@ import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Caritem = ({car}) => {
-    const {_id,img,descrip,carname, price} =  car; 
+    const {_id,imgBuffer,descrip,carname, price} =  car; 
     return (
        <Col lg={6} md={6} sm={12}>
            <Row className="gx-3 ">
                <Col lg={6} md={6} sm={12}>
-                    <img className="w-100 h-75 rounded" src={img} alt="" />
+                    <img className="w-100 h-75 rounded" src={`data:image/jpeg;base64,${imgBuffer}`} alt="" />
                </Col>
                <Col className="carrow" lg={6} md={6} sm={12}>
                     <h3>{carname}</h3>

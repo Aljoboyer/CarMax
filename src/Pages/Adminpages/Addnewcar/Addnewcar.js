@@ -6,10 +6,14 @@ import Successmodal from '../../Commonpages/Successmodal/Successmodal';
 const Addnewcar = () => {
     const {user} = useAuth();
     const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    
     const [formdata, setFormdata] = useState({});
+    const [img, setImg] = useState(null);
+    const handleClose = () => setShow(false);
+
+    const imageHanlder = (e) => {
+        setImg(e.target.files[0])
+    }
+    
     const onblurHandler = e => {
         const fieldname = e.target.name;
         const fieldvalue = e.target.value;
@@ -19,12 +23,20 @@ const Addnewcar = () => {
         setFormdata(newdata)
     }
     const SubmitHanlder = e => {
-        fetch('https://evening-caverns-02179.herokuapp.com/carmodels',{
+        e.preventDefault()
+        if(!img)
+        {
+            return
+        }
+        const cardata = new FormData();
+        cardata.append('carname', formdata.carname);
+        cardata.append('price', formdata.price);
+        cardata.append('img', img);
+        cardata.append('descrip', formdata.descrip);
+        cardata.append('brand', formdata.brand)
+        fetch('http://localhost:5000/carmodels',{
             method: 'POST',
-            headers:{
-                'content-type':'application/json'
-            },
-            body: JSON.stringify(formdata)
+            body: cardata
         })
         .then(res => res.json())
         .then(data => {
@@ -34,7 +46,11 @@ const Addnewcar = () => {
                 e.target.reset()
             }
         })
-        e.preventDefault()
+        .catch(error => {
+              
+            console.error('Error:', error);
+          });
+        
     }
     return (
         <div className="container-fluid">
@@ -67,18 +83,33 @@ const Addnewcar = () => {
         </Form.Floating>     
         </Row>
 
-            <Form.Floating className="mb-3 fw-bold text-primary">
+        <Row>
+        <Form.Group as={Col} className="mb-3 fw-bold text-primary">
+            <Form.Label>Choose image</Form.Label>
             <Form.Control
-            className="w-100"
-            id="floatingInputCustom"
-            type="text"
-            name="img"
-            required
-            onBlur={onblurHandler}
-            placeholder="Car image Url"
+            accept="image/*"
+              type="file"
+              required
+              name="img"
+              onChange={imageHanlder}
+              
             />
-            <label htmlFor="floatingInputCustom">Car image Url</label>
+            <Form.Control.Feedback type="invalid" tooltip>
+              
+            </Form.Control.Feedback>
+          </Form.Group>
+
+          <Form.Floating as={Col} className="mb-3 fw-bold text-primary">
+            <Form.Control as="textarea" className="w-100"
+            id="floatingPasswordCustom"
+            type="text"
+            name="brand"
+            onBlur={onblurHandler}
+            placeholder="Car Brand Name"
+            />
+            <label htmlFor="floatingPasswordCustom">Car Brand Name</label>
         </Form.Floating>
+        </Row>
 
         <Form.Floating as={Col} className="mb-3 fw-bold text-primary">
             <Form.Control as="textarea" className="w-100"
