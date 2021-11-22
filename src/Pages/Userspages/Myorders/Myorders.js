@@ -57,6 +57,7 @@ const Myorders = () => {
                         <th>Model Name</th>
                         <th>Price</th>
                         <th>Status</th>
+                        <th>PaymentOption</th>
                         <th>Action</th>
                     </tr>
                 </thead>

@@ -17,17 +17,16 @@ const Buypage = () => {
     return (
         <div className="container-fluid">
             <Headerpage></Headerpage>
-            <Row className="justify-content-center">
-                <Col lg={7} md={6} sm={12} className="p-4">
-                    <Row>
-                    <Col lg={6} md={12} sm={12}>
-                        <img className="w-75 rounded"  src={`data:image/jpeg;base64,${buycar.imgBuffer}`} alt="" />
+            <Row className="justify-content-center buypagerow">
+                <Col lg={8} md={6} sm={12} className="p-4  features">
+                        <img className="w-75 h-50 rounded"  src={`data:image/jpeg;base64,${buycar.imgBuffer}`} alt="" />
                         <h3>{buycar.carname}</h3>
                         <h5>{buycar.price}</h5>
                         <p><b className="text-primary">About This Car: </b>{buycar.descrip}</p>
-                    </Col>
-                    <Col  lg={6} md={12} sm={12}>
-                    <Row className="featurerow bg-secondary ">
+
+                </Col>
+                <Col  lg={4} md={6} sm={12} className="justify-content-center orderform  featurerow">
+                <Row className="  ">
                <h4 className="fw-bold guraanteetitle">Features</h4>
                <Col lg={12} sm={12}>
                 <h6 className="fw-bold guraanteetitle my-3">Comfort</h6>
@@ -91,11 +90,12 @@ Curb Weight
 4,697 lbs
                </Col>
            </Row>
-                    </Col>
-                    </Row>
                 </Col>
-                <Col  lg={5} md={6} sm={12} className="justify-content-center orderform">
-                    <Orderplaceform buycar={buycar}></Orderplaceform>
+            </Row>
+
+            <Row className="d-flex justify-content-center align-items-center mt-4 mb-4">
+                <Col lg={6} md={10} sm={12}>
+                <Orderplaceform buycar={buycar}></Orderplaceform>
                 </Col>
             </Row>
             <Featureandspaces></Featureandspaces>

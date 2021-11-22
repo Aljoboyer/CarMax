@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { Col, Row } from 'react-bootstrap';
+import './Pymentpage.css';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal);
 const Checkoutform = ({paymentdata}) => {
     const {price,username,_id,email} = paymentdata
  
@@ -8,7 +13,7 @@ const Checkoutform = ({paymentdata}) => {
     const elements = useElements();
     const[clientSecret , setClientSecret] = useState('')
     const [porcessing, setProcessing] = useState(false)
-    const [success, setSuccess] = useState(false)
+    const [success, setSuccess] = useState('')
     useEffect(() => {
         fetch('http://localhost:5000/create-payment-intent',{
             method: 'POST',
@@ -39,8 +44,13 @@ const Checkoutform = ({paymentdata}) => {
         if(error)
         {
             setProcessing(false)
-            setSuccess(false)
-            console.log('error from getelement',error.message)
+            setSuccess('')
+           setSuccess('')
+            Swal.fire(
+              `${error.message}`,
+              '',
+              'error'
+            )
         }
         else{
             setProcessing(false)
@@ -64,11 +74,20 @@ const Checkoutform = ({paymentdata}) => {
           if(intentError)
           {
             setProcessing(false)
-            setSuccess(false)
-              console.log('error from intentError',intentError.message)
+            setSuccess('')
+            Swal.fire(
+                `${intentError.message}`,
+                '',
+                'error'
+              )
           }
           else{
-            setSuccess(true)
+            setSuccess('success')
+            Swal.fire(
+                'Payment Succesfull',
+                '',
+                'success'
+              )
             setProcessing(false)
             const payment = {
                 username: paymentIntent.name,
@@ -91,18 +110,18 @@ const Checkoutform = ({paymentdata}) => {
 
     }
     return (
-        <div className="justify-content-center my-4 checkoutforms ">
+        <div className="justify-content-center my-4 ">
             <Row className="d-flex justify-content-center align-items-center p-4"> 
-                <Col lg={8} md={10} sm={12} className="bg-secondary  p-4 rounded">
+                <Col lg={8} md={10} sm={12} className=" checkoutforms p-4 rounded">
                 <form onSubmit={handleSubmit}>
                 <CardElement
                     options={{
                     style: {
                         base: {
-                        fontSize: '16px',
-                        color: '#424770',
+                        fontSize: '20px',
+                        color: 'black',
                         '::placeholder': {
-                            color: '#aab7c4',
+                            color: 'black',
                         },
                         },
                         invalid: {

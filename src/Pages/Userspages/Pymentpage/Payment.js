@@ -20,7 +20,7 @@ const Payment = () => {
     return (
     <Row className="container-fluid">
         <Headerpage></Headerpage>
-        <h2 className="text-center fw-bolt my-4">{paymentdata.username}Pay Your Bill {paymentdata.price}</h2>
+        <h2 className="text-center fw-bold my-4 guraanteetitle">{paymentdata.username}Pay Your Bill {paymentdata.price}</h2>
         {
             paymentdata.price && <Elements  stripe={stripePromise}>
             <Checkoutform paymentdata={paymentdata} />

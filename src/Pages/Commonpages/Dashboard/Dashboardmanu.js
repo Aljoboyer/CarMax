@@ -33,9 +33,11 @@ const Dashboardmanu = () => {
             isadmin ? <><Link to={`${url}/addcar`}><ListGroup.Item  variant="primary" className=" fw-bold my-2"><i className="fas fa-car-alt"></i> Add new Car</ListGroup.Item></Link>
             <Link to={`${url}/managecar`}><ListGroup.Item  variant="primary" className=" fw-bold my-2"> <i className="fas fa-caret-square-right"></i> Manage All Car</ListGroup.Item></Link>
             <Link to={`${url}/manageorder`}><ListGroup.Item  variant="primary" className=" fw-bold my-2"><i className="fas fa-tasks"></i> Manage Car Order</ListGroup.Item></Link>
-            <Link to={`${url}/makeadmin`}><ListGroup.Item  variant="primary" className=" fw-bold my-2"><i className="fas fa-user-plus"></i> Make an Admin</ListGroup.Item></Link></>
+            <Link to={`${url}/makeadmin`}><ListGroup.Item  variant="primary" className=" fw-bold my-2"><i className="fas fa-user-plus"></i> Make an Admin</ListGroup.Item></Link>
+            <Link to={`${url}/checkpayment`}><ListGroup.Item  variant="primary" className=" fw-bold my-2"><i className="fas fa-user-plus"></i>Checkpayment</ListGroup.Item></Link>
+            </>
             
-
+            
             :
 
             <> <Link to={`${url}/myorder`}><ListGroup.Item  variant="primary" className=" fw-bold my-2"><i className="fab fa-first-order me-2"></i> My Order</ListGroup.Item></Link>

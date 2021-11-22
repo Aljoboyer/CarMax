@@ -42,8 +42,8 @@ const Orderplaceform = ({buycar}) => {
         e.preventDefault()
     }
     return (
-        <Row className="loginform algin-items-center justify-content-center p-4">
-        <h3 className="my-4 text-primary">Purchase Your Car</h3>
+        <Row className="loginform algin-items-center justify-content-center p-3">
+        <h3 className="my-4 text-center fw-bold guraanteetitle"> <i>Purchase Your Car</i> </h3>
             <form onSubmit={SubmitHanlder}>
             <Row>
             <Form.Floating as={Col} className="mb-3 fw-bold text-primary ">
@@ -81,6 +81,7 @@ const Orderplaceform = ({buycar}) => {
             required
             onBlur={onblurHandler}
             defaultValue={user.email}
+            placeholder="Your Email address"
             />
             <label htmlFor="floatingInputCustom">Your Email address</label>
         </Form.Floating>
@@ -92,7 +93,7 @@ const Orderplaceform = ({buycar}) => {
             name="modelname"
             onChange={onblurHandler}
             value={formdata.modelname}
-            
+            placeholder="Your Car-Model"
             />
             <label htmlFor="floatingPasswordCustom">Your Car-Model</label>
         </Form.Floating>
@@ -112,7 +113,7 @@ const Orderplaceform = ({buycar}) => {
         <Form.Label className="mb-3 fw-bold text-primary">Choose payment option</Form.Label>
         <Form.Select name="paymentoption"  onBlur={onblurHandler} defaultValue="Manual Payment">
             <option>Manual Payment</option>
-            <option>PayPal</option>
+            <option>Online</option>
            
         </Form.Select>
         </Form.Group>

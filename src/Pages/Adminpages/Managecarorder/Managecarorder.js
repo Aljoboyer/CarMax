@@ -11,7 +11,6 @@ const Managecarorder = () => {
     const [isdelete, setIsdelete] = useState(false);
     const [deleteid, setDeleteid] = useState(null)
 
-    console.log('allorders',allorders)
     useEffect(() => {
         fetch('https://evening-caverns-02179.herokuapp.com/allorders')
         .then(res => res.json())

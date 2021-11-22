@@ -45,9 +45,9 @@ function App() {
                   <Route exact path="/payment/:id">
                         <Payment></Payment>
                   </Route>
-                  <Route exact path="/carshop">
+                  <Privateroute exact path="/carshop">
                     <Carshop></Carshop>
-                    </Route>
+                    </Privateroute>
                   <Route exact path="*">
                     <Notfound></Notfound>
                   </Route>

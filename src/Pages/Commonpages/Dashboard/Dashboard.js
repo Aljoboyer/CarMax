@@ -20,6 +20,7 @@ import Adminroute from '../../Adminpages/Adminroute/Adminroute'
 import Dashboardnavbar from './Dashboardnavbar';
 import Paymentstatus from '../../Userspages/Pymentpage/Paymentstatus';
 import Payment from '../../Userspages/Pymentpage/Payment';
+import Checkpayment from '../../Adminpages/Checkallpaymenthistory/Checkpayment';
 const Dashboard = () => {
     const { path, url } = useRouteMatch();
     return (
@@ -57,6 +58,9 @@ const Dashboard = () => {
                     </Adminroute>
                     <Adminroute path={`${path}/makeadmin`}>
                         <Makeadmin></Makeadmin>
+                    </Adminroute>
+                    <Adminroute path={`${path}/checkpayment`}>
+                        <Checkpayment></Checkpayment>
                     </Adminroute>
                 </Switch>
                 </Col>
