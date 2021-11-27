@@ -11,6 +11,10 @@
   - Admin can add new car model and also they can delete car model
   - An admin can able to make another admin
   - Admin Can manage order of all customer
+  - Medical service website including admin panel. Admin can add, delete services & appointments. Also, they can check clients' booking & payment status.
+  - Clients can book services & appointments. They also can pay service & appointment bills.
+  - Unauthorized clients are not allowed to book services or appointments.
+  - Technology: HTML, CSS, Bootstrap, React.js, Node.js, Express.js, MongoDB, Firebase
 - FUNTIONALITY
   - I make frontend of this website by used react.js and for backend i used mongodb
   - For image uploading i used imgbb
