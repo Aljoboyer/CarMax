@@ -11,8 +11,8 @@
   - Admin can add new car model and also they can delete car model
   - An admin can able to make another admin
   - Admin Can manage order of all customer
-  - Medical service website including admin panel. Admin can add, delete services & appointments. Also, they can check clients' booking & payment status.
-  - Clients can book services & appointments. They also can pay service & appointment bills.
+  - A car buying website including an admin panel.Admin can add, delete car items. Also admin can check client’s order and payment status
+  - Clients can buy the car and pay bills online. Clients can check their order and they can cancel their order
   - Unauthorized clients are not allowed to book services or appointments.
   - Technology: HTML, CSS, Bootstrap, React.js, Node.js, Express.js, MongoDB, Firebase
 - FUNTIONALITY
