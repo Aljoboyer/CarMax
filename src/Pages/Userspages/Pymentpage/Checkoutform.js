@@ -45,7 +45,6 @@ const Checkoutform = ({paymentdata}) => {
         {
             setProcessing(false)
             setSuccess('')
-           setSuccess('')
             Swal.fire(
               `${error.message}`,
               '',

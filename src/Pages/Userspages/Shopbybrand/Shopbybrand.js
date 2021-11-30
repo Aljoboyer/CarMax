@@ -10,7 +10,7 @@ const Shopbybrand = () => {
     const [brandcar, setBrandcar] = useState([]);
     
     const BrandHanlder = brand => {
-        fetch(`http://localhost:5000/shopbybrand?brand=${brand}`)
+        fetch(`https://evening-caverns-02179.herokuapp.com/shopbybrand?brand=${brand}`)
         .then(res => res.json())
         .then(data => setBrandcar(data))
     }
