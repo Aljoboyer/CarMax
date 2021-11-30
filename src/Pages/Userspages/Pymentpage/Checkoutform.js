@@ -15,7 +15,7 @@ const Checkoutform = ({paymentdata}) => {
     const [porcessing, setProcessing] = useState(false)
     const [success, setSuccess] = useState('')
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent',{
+        fetch('https://evening-caverns-02179.herokuapp.com/create-payment-intent',{
             method: 'POST',
             headers: {
                 'content-type':'application/json'
@@ -96,7 +96,7 @@ const Checkoutform = ({paymentdata}) => {
              }
 
              //saving payment history database
-             fetch(`http://localhost:5000/paymentdataupdating/${_id}`,{
+             fetch(`https://evening-caverns-02179.herokuapp.com/paymentdataupdating/${_id}`,{
                 method: 'PUT',
                 headers: {
                     'content-type':'application/json'

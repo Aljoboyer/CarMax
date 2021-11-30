@@ -34,7 +34,7 @@ const Addnewcar = () => {
         cardata.append('img', img);
         cardata.append('descrip', formdata.descrip);
         cardata.append('brand', formdata.brand)
-        fetch('http://localhost:5000/carmodels',{
+        fetch('https://evening-caverns-02179.herokuapp.com/carmodels',{
             method: 'POST',
             body: cardata
         })
